@@ -3,7 +3,7 @@ data_all <- read.csv("household_power_consumption.txt", sep=";", na.strings="?",
 data <- na.omit(data_all[data_all$Date == "1/2/2007"| data_all$Date == "2/2/2007",])
 
 # make plots and safe as png
-png(file = "plot4.png")
+png(file = "plot4.png", bg = "transparent")
 par(mfcol = c(2,2), mar = c(4,4,2,2))
 
 with(data, plot(Global_active_power, type = "l", xaxt = "n", ylab = "Global Active Power(kilowatts)", xlab = ""))
@@ -22,3 +22,4 @@ with(data, plot(Global_reactive_power, type = "l", xaxt = "n", ylab = "Global_re
 axis(1, at = c(0,1441,2881), labels = c("Thu","Fri","Sat"))
 
 dev.off()
+

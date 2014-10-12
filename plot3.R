@@ -3,7 +3,7 @@ data_all <- read.csv("household_power_consumption.txt", sep=";", na.strings="?",
 data <- na.omit(data_all[data_all$Date == "1/2/2007"| data_all$Date == "2/2/2007",])
 
 # plot of Energy sub metering and safe as png
-png(file = "plot3.png")
+png(file = "plot3.png",bg = "transparent")
 with(data, plot(Sub_metering_1, type = "l", xaxt = "n", ylab = "Energy sub metering", xlab = ""))
 with(data, lines(Sub_metering_2, type = "l", col = "red"))
 with(data, lines(Sub_metering_3, type = "l", col = "blue"))
